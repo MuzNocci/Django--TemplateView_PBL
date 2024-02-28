@@ -1,0 +1,18 @@
+<html>
+
+    <head>
+        <title>{{ title }}</title>
+    </head>
+
+    <body>
+        <h1>Other Page (After redirect)</h1>
+        <p>Database:</p>
+        <p>ID: {{ test.id }}</p>
+        <p>NAME: {{ test.name }}</p>
+        <p>REDIRECT COUNT: {{ test.count }}</p>
+        <br/>
+        <p><a href='{% url 'app:index' %}'>Go to index page <<</a></p>
+        <p><a href='{% url 'app:other' %}'>Go to other page <<</a></p>
+    </body>
+    
+</html>
