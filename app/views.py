@@ -43,6 +43,7 @@ class TaskView(TemplateView):
     def get_context_data(self, **kwargs: Any) -> dict[str, Any]:
 
         context = super().get_context_data(**kwargs)
+        
         context['test'] = get_object_or_404(BaseTest, pk=self.kwargs.get('pk'))
         context['title'] = 'Other Page Title (After Redirect)'
 
