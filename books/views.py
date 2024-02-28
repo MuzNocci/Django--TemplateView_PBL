@@ -18,6 +18,7 @@ class IndexView(TemplateView):
         context = super().get_context_data(**kwargs)
         context['books'] = Books.objects.all()
         context['title'] = 'Books Page'
+        
         return context
     
     
