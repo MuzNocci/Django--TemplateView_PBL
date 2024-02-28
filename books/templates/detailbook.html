@@ -1,0 +1,23 @@
+<html>
+
+    <head>
+        <title>Livro "{{ book.title }}"</title>
+    </head>
+
+    <body>
+        <h1>Livro:</h1>
+        <br/>
+        <p>ID: {{ book.id }}</p>
+        <p>TITLE: {{ book.title }}</p>
+        <p>AUTHOR: {{ book.author }}</p>
+        <p>GENRE: {{ book.genre }}</p>
+        <p>ISBN: {{ book.isbn }}</p>
+        <p>COUNTER: {{ book.count }}</p>
+        <br/>
+        <p><a href='{% url 'app:index' %}'>Go to index page <<</a></p>
+        <p><a href='{% url 'app:other' %}'>Go to other page <<</a></p>
+        <p><a href='{% url 'books:index' %}'>Go to books page <<</a></p>
+        <p><a href='{% url 'app:go-to-muller' %}' target='_blanc'>Go to Müller Nocciolli page >></a></p>
+    </body>
+    
+    </html>

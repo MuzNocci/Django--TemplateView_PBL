@@ -12,6 +12,7 @@
         <p>REDIRECT COUNT: {{ basetest.count }}</p>
         <br/>
         <p><a href='{% url 'app:index' %}'>Go to index page <<</a></p>
+        <p><a href='{% url 'books:index' %}'>Go to books page >></a></p>
         <p><a href='{% url 'app:posttask' pk=basetest.id %}'>Go to task redirect page >></a></p>
     </body>
     

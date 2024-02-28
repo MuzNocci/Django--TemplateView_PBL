@@ -1,0 +1,60 @@
+<html>
+
+    <head>
+        <title>{{ title }}</title>
+        <style>
+            .table{
+                font-family: Arial;
+                text-align: left;
+            }
+            .table th{
+                background-color:#333;
+                color:#fff;
+                padding:10px;
+            }
+            .table td{
+                background-color:#f4f4f4;
+                color:#333;
+                padding:10px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <h1>Books Page</h1>
+        <p></p>
+        <div>
+            <table class="table" style="width:958px;">
+                <thead>
+                  <tr>
+                    <th scope="col" style="">#</th>
+                    <th scope="col" style="background-color:#333; color:#fff; padding:10px;">Title</th>
+                    <th scope="col" style="background-color:#333; color:#fff; padding:10px;">Author</th>
+                    <th scope="col" style="background-color:#333; color:#fff; padding:10px;">Genre</th>
+                    <th scope="col" style="background-color:#333; color:#fff; padding:10px;">Code</th>
+                    <th scope="col" style="background-color:#333; color:#fff; padding:10px;">Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                {% for book in books %}
+                  <tr>
+                    <th scope="row" style="background-color:#f4f4f4; color:#333; padding:10px;">{{ book.id }}</th>
+                    <td style="background-color:#f4f4f4; color:#333; padding:10px;">{{ book.title }}</td>
+                    <td style="background-color:#f4f4f4; color:#333; padding:10px;">{{ book.author }}</td>
+                    <td style="background-color:#f4f4f4; color:#333; padding:10px;">{{ book.genre }}</td>
+                    <td style="background-color:#f4f4f4; color:#333; padding:10px;">{{ book.isbn }}</td>
+                    <td style="background-color:#f4f4f4; color:#333; padding:10px;">
+                        <a href="{% url 'books:book-detail' slug=book.slug %}"><button type="button">Show Book</button></a>
+                    </td>
+                  </tr>
+                {% endfor %}
+                </tbody>
+              </table>
+              <br/>
+              <p><a href='{% url 'app:index' %}'>Go to index page <<</a></p>
+              <p><a href='{% url 'app:other' %}'>Go to other page <<</a></p>
+              <p><a href='{% url 'app:go-to-muller' %}' target='_blanc'>Go to Müller Nocciolli page >></a></p>
+        </div>
+    </body>
+    
+</html>

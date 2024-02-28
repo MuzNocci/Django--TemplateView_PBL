@@ -1,5 +1,5 @@
 # REQUIREMENTS
-from django.views.generic import TemplateView, RedirectView
+from django.views.generic.base import TemplateView, RedirectView
 from django.shortcuts import get_object_or_404
 from django.db.models import F
 from typing import Any
