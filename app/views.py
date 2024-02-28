@@ -10,9 +10,7 @@ from app.models import BaseTest
 
 class OtherView(TemplateView):
 
-
     template_name = 'otherpage.html'
-
 
     def get_context_data(self, **kwargs: Any) -> dict[str, Any]:
 
@@ -27,10 +25,8 @@ class OtherView(TemplateView):
 
 class PostTaskView(RedirectView):
 
-    # url = 'https://muller.nocciolli.com.br/'
     pattern_name = 'app:singletask'
 
-    #permanent = HTTP status code returned (True = 301, False = 302, Default = False)
     def get_redirect_url(self, *args: Any, **kwargs: Any) -> str | None:
 
        test = BaseTest.objects.filter(pk=kwargs['pk'])
